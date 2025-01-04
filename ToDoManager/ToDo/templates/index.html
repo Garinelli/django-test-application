@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <h1 class="header-text">ToDo менеджер</h1>
+    <div class="about-info">
+        <div class="description">
+            <p>
+                Добро пожаловать в приложение ToDo Manager!
+                <br>
+                Здесь вы сможете грамотно распределять свои задачи, а именно: 
+            </p>
+            <ul>
+                <li>
+                    Добавлять задачи
+                </li>
+                <li>
+                    Удалять задачи
+                </li>
+                <li>
+                    Сортировать задачи по важности
+                </li>
+                <li>
+                    Для каждой задачи создавать несколько подзадач
+                </li>
+            </ul>
+        </div>
+        <a href="/login">Войти в аккаунт</a>
+        <a href="/register">Зарегестрироваться</a>
+    </div>
+</body>
+</html>
