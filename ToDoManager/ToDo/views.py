@@ -20,7 +20,7 @@ def register_page(request):
             return redirect('login-page')
 
 
-@login_required
+@login_required(login_url='/login')
 def tasks_page(request):
     return render (request, 'tasks.html')
         

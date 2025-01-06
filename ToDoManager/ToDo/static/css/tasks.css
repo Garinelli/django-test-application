@@ -1,0 +1,42 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+.main-text{
+    text-align: center;
+    border: 2px solid;
+}
+
+
+.tasks{
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.task-card{
+    margin-right: 10px;
+    border: 2px solid;
+    width: 150px;
+    border-color: rgb(19, 131, 19);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    flex-direction: column;  /* Располагаем элементы по вертикали */
+    justify-content: center; /* Центрируем элементы по вертикали */
+    align-items: center;     /* Центрируем элементы по горизонтали */
+    text-align: center;      /* Центрируем текст внутри элементов */
+    flex-shrink: 0;
+}
+
+.mark-btn{
+    background-color: rgb(110, 232, 110);
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+.task-card:hover{
+    transform: translateY(-10px);
+}
+
+
