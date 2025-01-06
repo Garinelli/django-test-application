@@ -9,3 +9,7 @@ class Task(models.Model):
     is_completed = models.BooleanField(default=False)
     created_at = models.TimeField(auto_now_add=True)
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    class Meta:
+        db_table = 'tasks'
+        
