@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from .forms import RegisterForm
+from .forms import RegisterForm, CreateTaskForm
 from .models import User
 
 def index_page(request):
@@ -17,10 +17,15 @@ def register_page(request):
                 username=form.cleaned_data['login'],
                 password=form.cleaned_data['password']
             )
-            return redirect('login-page')
+            return redirect('login')
 
 
 @login_required(login_url='/login')
 def tasks_page(request):
     return render (request, 'tasks.html')
-        
+
+@login_required
+def create(request):
+    if request.method == "GET":
+        form = CreateTaskForm()
+        return render (request, 'create.html', {'form': form})

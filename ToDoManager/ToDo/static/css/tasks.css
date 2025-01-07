@@ -15,28 +15,37 @@ body {
     gap: 10px;
 }
 
-.task-card{
-    margin-right: 10px;
-    border: 2px solid;
-    width: 150px;
-    border-color: rgb(19, 131, 19);
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-    flex-direction: column;  /* Располагаем элементы по вертикали */
-    justify-content: center; /* Центрируем элементы по вертикали */
-    align-items: center;     /* Центрируем элементы по горизонтали */
-    text-align: center;      /* Центрируем текст внутри элементов */
-    flex-shrink: 0;
+.task-card {
+    margin-right: 15px; /* Чуть больше отступ для визуального дыхания */
+    border: 2px solid rgba(19, 131, 19, 0.8); /* Более мягкий цвет */
+    width: 200px; /* Увеличиваем размер для более выразительного вида */
+    padding: 15px; /* Добавляем внутренний отступ */
+    background: linear-gradient(145deg, #ffffff, #e6e6e6); /* Легкий градиент для объема */
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2), -4px -4px 8px rgba(255, 255, 255, 0.8); /* Эффект выпуклости */
+    border-radius: 15px; /* Более мягкие углы */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавность всех изменений */
+    display: flex; /* Flexbox для управления содержимым */
+    flex-direction: column; /* Расположение по вертикали */
+    justify-content: center; /* Центровка по вертикали */
+    align-items: center; /* Центровка по горизонтали */
+    text-align: center; /* Центрирование текста */
+    flex-shrink: 0; /* Элемент не сжимается */
+    cursor: pointer; /* Указатель при наведении */
 }
 
 .mark-btn{
     background-color: rgb(110, 232, 110);
     margin-bottom: 5px;
     margin-top: 10px;
+    border-radius: 5px;
+    outline: 1px solid rgb(158, 15, 177);
+    border: none;
 }
 
 .task-card:hover{
-    transform: translateY(-10px);
+    transform: translateY(-5px);
 }
+
+
 
 
