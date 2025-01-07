@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .forms import RegisterForm, CreateTaskForm
-from .models import User
+from .models import User, Task
 
 def index_page(request):
     return render(request, 'index.html')
@@ -28,4 +28,13 @@ def tasks_page(request):
 def create(request):
     if request.method == "GET":
         form = CreateTaskForm()
-        return render (request, 'create.html', {'form': form})
+        return render(request, 'create.html', {'form': form})
+    else:
+        form = CreateTaskForm(request.POST)
+        if form.is_valid():
+            Task.objects.create(
+                title=form.cleaned_data['title'],
+                description=form.cleaned_data['description'],
+                user_id=request.user 
+            )
+        return redirect('tasks')
