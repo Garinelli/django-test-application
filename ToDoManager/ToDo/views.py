@@ -22,9 +22,10 @@ def register_page(request):
 
 @login_required(login_url='/login')
 def tasks_page(request):
-    return render (request, 'tasks.html')
+    tasks = Task.objects.filter(user_id=request.user)
+    return render (request, 'tasks.html', {'tasks': tasks})
 
-@login_required
+@login_required(login_url='/login')
 def create(request):
     if request.method == "GET":
         form = CreateTaskForm()

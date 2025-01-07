@@ -14,108 +14,15 @@
         </div>
         <a href="/create">Создать задачу</a>
         <div class="tasks">
-            <div class="task-card">
-                <p>Task name</p>
-                <p>Description</p>
-                <button class="mark-btn">Mark as completed</button>
-                <button class="edit-btn">Edit</button>
-            </div>
-            <div class="task-card">
-                <p>Task name</p>
-                <p>Description</p>
-                <button class="mark-btn">Mark as completed</button>
-                <button class="edit-btn">Edit</button>
-            </div>
-            <div class="task-card">
-                <p>Task name</p>
-                <p>Description</p>
-                <button class="mark-btn">Mark as completed</button>
-                <button class="edit-btn">Edit</button>
-            </div>
-            <div class="task-card">
-                <p>Task name</p>
-                <p>Description</p>
-                <button class="mark-btn">Mark as completed</button>
-                <button class="edit-btn">Edit</button>
-            </div>
-            <div class="task-card">
-                <p>Task name</p>
-                <p>Description</p>
-                <button class="mark-btn">Mark as completed</button>
-                <button class="edit-btn">Edit</button>
-            </div>
-            <div class="task-card">
-                <p>Task name</p>
-                <p>Description</p>
-                <button class="mark-btn">Mark as completed</button>
-                <button class="edit-btn">Edit</button>
-            </div>
-            <div class="task-card">
-                <p>Task name</p>
-                <p>Description</p>
-                <button class="mark-btn">Mark as completed</button>
-                <button class="edit-btn">Edit</button>
-            </div>
-            <div class="task-card">
-                <p>Task name</p>
-                <p>Description</p>
-                <button class="mark-btn">Mark as completed</button>
-                <button class="edit-btn">Edit</button>
-            </div>
-            <div class="task-card">
-                <p>Task name</p>
-                <p>Description</p>
-                <button class="mark-btn">Mark as completed</button>
-                <button class="edit-btn">Edit</button>
-            </div>
-            <div class="task-card">
-                <p>Task name</p>
-                <p>Description</p>
-                <button class="mark-btn">Mark as completed</button>
-                <button class="edit-btn">Edit</button>
-            </div>
-            <div class="task-card">
-                <p>Task name</p>
-                <p>Description</p>
-                <button class="mark-btn">Mark as completed</button>
-                <button class="edit-btn">Edit</button>
-            </div>
-            <div class="task-card">
-                <p>Task name</p>
-                <p>Description</p>
-                <button class="mark-btn">Mark as completed</button>
-                <button class="edit-btn">Edit</button>
-            </div>
-            <div class="task-card">
-                <p>Task name</p>
-                <p>Description</p>
-                <button class="mark-btn">Mark as completed</button>
-                <button class="edit-btn">Edit</button>
-            </div>
-            <div class="task-card">
-                <p>Task name</p>
-                <p>Description</p>
-                <button class="mark-btn">Mark as completed</button>
-                <button class="edit-btn">Edit</button>
-            </div>            
-            <div class="task-card">
-                <p>Task name</p>
-                <p>Description</p>
-                <button class="mark-btn">Mark as completed</button>
-                <button class="edit-btn">Edit</button>
-            </div>            
-            <div class="task-card">
-                <p>Task name</p>
-                <p>Description</p>
-                <button class="mark-btn">Mark as completed</button>
-                <button class="edit-btn">Edit</button>
-            </div>            
-            <div class="task-card">
-                <p>Task name</p>
-                <p>Description</p>
-                <button class="mark-btn">Mark as completed</button>
-                <button class="edit-btn">Edit</button>
-            </div>
+            {% for task in tasks %}
+                <div class="task-card">
+                    <p>{{ task.title }}</p>
+                    <p>{{ task.description }}</p>
+                    <p>{{ task.created_at }}</p>
+                    <button class="mark-btn">Mark as completed</button>
+                    <button class="edit-btn">Edit</button>
+                </div>
+            {% endfor %}
         </div>
     </div>
     
