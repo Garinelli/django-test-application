@@ -23,7 +23,10 @@
                         {% csrf_token %}
                         <button type="submit" class="mark-btn">Mark as completed</button>
                     </form>
-                    <button class="edit-btn">Edit</button>
+                    <form method="GET" action="{% url 'edit' task.id %}">
+                        {% csrf_token %}
+                        <button class="edit-btn">Edit</button>
+                    </form>
                 </div>
             {% endfor %}
         </div>

@@ -47,3 +47,20 @@ def mark_completed(request, task_id):
         task.is_completed = True
         task.save()
     return redirect('tasks')
+
+
+def edit(request, task_id):
+    task = get_object_or_404(Task, id=task_id)
+    if request.method == "GET":
+        form = CreateTaskForm(initial={
+            'title': task.title,
+            'description': task.description
+        })
+        return render(request, 'edit.html', {'task': task, 'form': form})
+    if request.method == 'POST':
+        form = CreateTaskForm(request.POST)
+        if form.is_valid():
+            task.title = form.cleaned_data['title']
+            task.description = form.cleaned_data['description']
+            task.save()
+            return redirect('tasks')
