@@ -12,14 +12,17 @@
         <div class="main-text">
             <h1>Tasks</h1>
         </div>
-        <a href="/create">Создать задачу</a>
+        <a href="/create"><button>Создать задачу</button></a>
         <div class="tasks">
             {% for task in tasks %}
                 <div class="task-card">
                     <p>{{ task.title }}</p>
                     <p>{{ task.description }}</p>
                     <p>{{ task.created_at }}</p>
-                    <button class="mark-btn">Mark as completed</button>
+                    <form method="POST" action="{% url 'mark_completed' task.id %}">
+                        {% csrf_token %}
+                        <button type="submit" class="mark-btn">Mark as completed</button>
+                    </form>
                     <button class="edit-btn">Edit</button>
                 </div>
             {% endfor %}

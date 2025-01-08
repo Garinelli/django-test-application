@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .forms import RegisterForm, CreateTaskForm
 from .models import User, Task
@@ -22,7 +22,7 @@ def register_page(request):
 
 @login_required(login_url='/login')
 def tasks_page(request):
-    tasks = Task.objects.filter(user_id=request.user)
+    tasks = Task.objects.filter(user_id=request.user, is_completed=False)
     return render (request, 'tasks.html', {'tasks': tasks})
 
 @login_required(login_url='/login')
@@ -39,3 +39,11 @@ def create(request):
                 user_id=request.user 
             )
         return redirect('tasks')
+
+
+def mark_completed(request, task_id):
+    if request.method == "POST":
+        task = get_object_or_404(Task, id=task_id)
+        task.is_completed = True
+        task.save()
+    return redirect('tasks')
