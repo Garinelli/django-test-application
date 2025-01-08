@@ -36,11 +36,12 @@ def create(request):
             Task.objects.create(
                 title=form.cleaned_data['title'],
                 description=form.cleaned_data['description'],
+                priority=form.cleaned_data['priority'],
                 user_id=request.user 
             )
         return redirect('tasks')
 
-
+@login_required
 def mark_completed(request, task_id):
     if request.method == "POST":
         task = get_object_or_404(Task, id=task_id)
@@ -48,13 +49,14 @@ def mark_completed(request, task_id):
         task.save()
     return redirect('tasks')
 
-
+@login_required
 def edit(request, task_id):
     task = get_object_or_404(Task, id=task_id)
     if request.method == "GET":
         form = CreateTaskForm(initial={
             'title': task.title,
-            'description': task.description
+            'description': task.description,
+            'priority': task.priority
         })
         return render(request, 'edit.html', {'task': task, 'form': form})
     if request.method == 'POST':
@@ -62,5 +64,6 @@ def edit(request, task_id):
         if form.is_valid():
             task.title = form.cleaned_data['title']
             task.description = form.cleaned_data['description']
+            task.priority = form.cleaned_data['priority']
             task.save()
             return redirect('tasks')

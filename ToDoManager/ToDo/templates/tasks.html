@@ -18,6 +18,7 @@
                 <div class="task-card">
                     <p>{{ task.title }}</p>
                     <p>{{ task.description }}</p>
+                    <p>{{ task.priority }}</p>
                     <p>{{ task.created_at }}</p>
                     <form method="POST" action="{% url 'mark_completed' task.id %}">
                         {% csrf_token %}
