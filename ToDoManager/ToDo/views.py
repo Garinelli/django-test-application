@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
+from django.db import IntegrityError
 from .forms import RegisterForm, CreateTaskForm
 from .models import User, Task
 
@@ -13,11 +15,16 @@ def register_page(request):
     else:
         form = RegisterForm(request.POST)
         if form.is_valid():
-            User.objects.create_user(
-                username=form.cleaned_data['login'],
-                password=form.cleaned_data['password']
-            )
-            return redirect('login')
+            try:
+                User.objects.create_user(
+                    username=form.cleaned_data['login'],
+                    password=form.cleaned_data['password']
+                )
+                return redirect('login')
+            except IntegrityError:
+                messages.error(request, 'Пользователь с таким логином уже существует')
+                return redirect('register')
+
 
 
 @login_required(login_url='/login')
