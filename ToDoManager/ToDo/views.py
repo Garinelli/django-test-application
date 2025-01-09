@@ -24,6 +24,10 @@ def register_page(request):
             except IntegrityError:
                 messages.error(request, 'Пользователь с таким логином уже существует')
                 return redirect('register')
+        # Случай, когда пароли не равны
+        else:
+            messages.error(request, 'Пароли не совпадают')
+            return redirect('register')
 
 
 
