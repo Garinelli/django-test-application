@@ -28,9 +28,9 @@ class RegisterForm(forms.Form):
 
 class CreateTaskForm(forms.Form):
     PRIORITY_CHOICES = [
-        ('Н', 'Низкий'),
-        ('С', 'Средний'),
-        ('В', 'Высокий')
+        ('Низкий','Низкий'),
+        ('Средний','Средний'),
+        ('Высокий','Высокий')
     ]
 
     title = forms.CharField(

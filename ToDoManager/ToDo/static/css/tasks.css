@@ -20,21 +20,21 @@ p{
 }
 
 .task-card {
-    margin-right: 15px; /* Чуть больше отступ для визуального дыхания */
-    border: 2px solid rgba(19, 131, 19, 0.8); /* Более мягкий цвет */
-    width: 200px; /* Увеличиваем размер для более выразительного вида */
-    padding: 15px; /* Добавляем внутренний отступ */
-    background: linear-gradient(145deg, #ffffff, #e6e6e6); /* Легкий градиент для объема */
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2), -4px -4px 8px rgba(255, 255, 255, 0.8); /* Эффект выпуклости */
-    border-radius: 15px; /* Более мягкие углы */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавность всех изменений */
-    display: flex; /* Flexbox для управления содержимым */
-    flex-direction: column; /* Расположение по вертикали */
-    justify-content: center; /* Центровка по вертикали */
-    align-items: center; /* Центровка по горизонтали */
-    text-align: center; /* Центрирование текста */
-    flex-shrink: 0; /* Элемент не сжимается */
-    cursor: pointer; /* Указатель при наведении */
+    margin-right: 15px; 
+    border: 2px solid rgba(19, 131, 19, 0.8); 
+    width: 200px; 
+    padding: 15px; 
+    background: linear-gradient(145deg, #ffffff, #e6e6e6); 
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2), -4px -4px 8px rgba(255, 255, 255, 0.8);
+    border-radius: 15px; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-shrink: 0;
+    cursor: pointer; 
 }
 
 .mark-btn{
@@ -51,5 +51,25 @@ p{
 }
 
 
+a button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    background: linear-gradient(145deg, #4CAF50, #45A049);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2), -3px -3px 8px rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
 
+a button:hover {
+    background: linear-gradient(145deg, #45A049, #4CAF50);
+    transform: translateY(-3px);
+}
+a{
+    text-decoration: none;
+}
 
