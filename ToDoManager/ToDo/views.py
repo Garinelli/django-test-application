@@ -78,3 +78,10 @@ def edit(request, task_id):
             task.priority = form.cleaned_data['priority']
             task.save()
             return redirect('tasks')
+
+@login_required
+def delete(request, task_id):
+    task = get_object_or_404(Task, id=task_id)
+    if request.method == "POST":
+        task.delete()
+        return redirect('tasks')

@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.urls import path
 from ToDo.views import (
     index_page, register_page, tasks_page, create, mark_completed,
-    edit
+    edit, delete
 )
 
 urlpatterns = [
@@ -14,5 +14,6 @@ urlpatterns = [
     path('tasks/', tasks_page, name='tasks'),
     path('create/', create, name='create'),
     path('mark_completed/<int:task_id>/', mark_completed, name='mark_completed'),
-    path('edit/<int:task_id>/', edit, name='edit')
+    path('edit/<int:task_id>/', edit, name='edit'),
+    path('delete/<int:task_id>', delete, name='delete')
 ]

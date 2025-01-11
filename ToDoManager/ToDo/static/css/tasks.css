@@ -73,3 +73,11 @@ a{
     text-decoration: none;
 }
 
+.delete-btn{
+    background-color: red;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+.btns{
+    display: flex;
+}

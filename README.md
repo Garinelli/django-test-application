@@ -1,1 +1,1 @@
-# django-test-application
+# Web-приложение ToDoManager, где пользователи могут создавать задачи
