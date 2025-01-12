@@ -19,7 +19,7 @@
 * Сборка проекта: `docker-compose build`
 * Миграция моделей: `docker-compose run --rm django_app python manage.py migrate`  
 Примечание. Может возникнуть ошибка, что django не может подключиться к базе данных. Для устранения ошибки повторно выполните вышеуказанную команду
-* Запуск тестов: `docker-compose run --rm django_app python manage.py test ToDo`
+* Запуск тестов(опционально): `docker-compose run --rm django_app python manage.py test ToDo`
 * Запуск приложения: `docker-compose up`
 * После запуска перейдите по url: http://localhost:80
 
