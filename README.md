@@ -17,7 +17,8 @@
 
 Для запуска через Docker последовательно выполните следующие команды в терминале проекта:
 * Сборка проекта: `docker-compose build`
-* Миграция моделей: `docker-compose run --rm django_app python manage.py migrate`
+* Миграция моделей: `docker-compose run --rm django_app python manage.py migrate`  
+Примечание. Может возникнуть ошибка, что django не может подключиться к базе данных. Для устранения ошибки повторно выполните вышеуказанную команду
 * Запуск тестов: `docker-compose run --rm django_app python manage.py test ToDo`
 * Запуск приложения: `docker-compose up`
 * После запуска перейдите по url: http://localhost:80
@@ -35,6 +36,8 @@
     * DB_PORT
 
 * Перейдите в директорию ToDoManager
-* Запуск тестов: `docker-compose run --rm django_app python manage.py test ToDo`
+* Сделайте миграцию моделей: `python manage.py migrate`  
+Примечание. Может возникнуть ошибка, что django не может подключиться к базе данных. Для устранения ошибки повторно выполните вышеуказанную команду
+* Запуск тестов: `python manage.py test ToDo`
 * Запустите приложение: `python manage.py runserver`
 * После запуска перейдите по url: http://localhost:80
